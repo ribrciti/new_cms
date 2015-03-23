@@ -9,6 +9,10 @@
 	<% target = "whirl a way!" %>
 	<%= "Hello #{target}" %><br>
 
+	<% 3.times do %>
+		<%= "print XXX" %>
+	<% end %>
+
 <% @array.each do |num| %>
 <%= num %><br>   
 <% end %>
@@ -21,7 +25,7 @@
 <br>
 ID: <%= params[:id] %><br>
 ID: <%= @id %><br>
-Page: <%= @page + 1 %><br>
+Next Page: <%= @page + 1 %><br>
 
 <hr>
 <%= params.inspect %>
