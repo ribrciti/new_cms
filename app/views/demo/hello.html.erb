@@ -1,0 +1,29 @@
+!DOCTYPE html>
+<html>
+<head>
+	<h1>Test Hello Page</h1>
+</head>
+<body>
+	<p>This is the "Hello Page"</p>
+	<%= 1 + 1 %><br>
+	<% target = "whirl a way!" %>
+	<%= "Hello #{target}" %><br>
+
+<% @array.each do |num| %>
+<%= num %><br>   
+<% end %>
+
+<br>
+
+<a href="/demo/index">Index page 1</a><br>
+<%= link_to('Index page 2', {:action => 'index'}) %>
+
+<br>
+ID: <%= params[:id] %><br>
+ID: <%= @id %><br>
+Page: <%= @page + 1 %><br>
+
+<hr>
+<%= params.inspect %>
+
+</html>
