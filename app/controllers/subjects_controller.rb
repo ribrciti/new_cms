@@ -1,8 +1,6 @@
 class SubjectsController < ApplicationController
 
-  layout false
-
-  #layout "admin"
+  layout "admin"
 
   def index
     @subjects = Subject.sorted    # sorted comes from our previously defined scope in our model

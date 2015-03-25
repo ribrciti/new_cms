@@ -11,7 +11,7 @@ class AdminUser < ActiveRecord::Base
   EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
   FORBIDDEN_USERNAMES = ['littlebopeep', 'humptydumpty', 'marymary']
 
-=begin
+
   validates_presence_of :first_name
   validates_length_of :first_name, :maximum => 25
   validates_presence_of :last_name
@@ -55,5 +55,5 @@ class AdminUser < ActiveRecord::Base
       errors[:base] << "No new users on Saturdays."
     end    
   end
-=end
+
 end

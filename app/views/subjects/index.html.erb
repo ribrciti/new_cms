@@ -12,9 +12,9 @@
       <th>Visible</th>
       <th>Pages</th>
       <th>Actions</th>
-    </tr class="<%= cycle('odd', 'even') %>">
+    </tr>
     <% @subjects.each do |subject| %>
-    <tr>
+    <tr class="<%= cycle('odd', 'even') %>">
       <td><%= subject.position %></td>
       <td><%= subject.name %></td>
       <td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
