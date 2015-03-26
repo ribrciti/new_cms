@@ -1,6 +1,6 @@
 class DemoController < ApplicationController
 
-	layout false  #'application'
+	layout 'application'
 
   def index
 	end

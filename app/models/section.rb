@@ -17,8 +17,6 @@ class Section < ActiveRecord::Base
   scope :invisible, lambda { where(:visible => false) }  
   scope :sorted, lambda { order("sections.position ASC") }
   scope :newest_first, lambda { order("sections.created_at DESC") }
-  scope :search, lambda { |query|
-    where(["name LIKE ?", "%#{query}%"])
-  }
+  
 end
 

@@ -1,4 +1,4 @@
-
+<%= error_messages_for(@section) %>
 
 <table summary="Section form fields">
   <tr>
@@ -6,7 +6,7 @@
     <td><%= f.text_field(:page_id) %></td>
   </tr>
   <tr>
-    <th><%= f.label(:name, "Name") %></th>
+    <th><%= f.label(:name) %></th>
     <td><%= f.text_field(:name) %></td>
   </tr>
   <tr>

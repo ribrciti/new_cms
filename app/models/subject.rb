@@ -4,6 +4,9 @@ class Subject < ActiveRecord::Base
 
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 255
+		#validdates_presence_of vs. validates_length _of :minimum => 1
+		# different error messages: "can't be blank" or "is too short"
+		# validates_length_of allows strings with only spaces!
 
 	scope :visible, lambda { where(:visible => true) }
 	scope :invisible, lambda { where(:visible => false) }
