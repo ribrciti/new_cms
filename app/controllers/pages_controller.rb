@@ -2,6 +2,8 @@ class PagesController < ApplicationController
 
   layout "admin"
 
+  before_action :confirm_logged_in
+
   def index
     # make sure @pages is plural and Page is caps!!!
     @pages = Page.sorted      

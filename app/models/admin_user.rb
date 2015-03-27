@@ -35,13 +35,21 @@ class AdminUser < ActiveRecord::Base
   validates :user_name,   :length => { :within => 8..25 },
                           :uniqueness =>  true
   validates :email,       :presence => true,
-                          :length => { maximum => 100},
+                          :length => { :maximum => 100},
                           :format => EMAIL_REGEX,
                           :confirmation => true
 
-  validate :username_is_allowed         # This is a custom validation method
-  
+  validate :username_is_allowed         # This is a custom validation method  
   #validate :no_new_users_on_saturday, :on => :create 
+
+  scope :sorted, lambda { order("last_name ASC", "first_name ASC")}
+
+  def name
+    "#{first_name} #{last_name}"
+    # or:  [first_name, last_name].join(' ')
+  end
+
+  private
 
   def username_is_allowed
     if FORBIDDEN_USERNAMES.include?(username)
