@@ -13,7 +13,7 @@ class AdminUsersController < ApplicationController
   end
 
   def create
-    @admin_user = AdminUser.new(admin_users_params)
+    @admin_user = AdminUser.new(admin_user_params)
     if @admin_user.save
       flash[:notice] = "Admin User created successfully"
       redirect_to(:action => 'index')
@@ -28,7 +28,7 @@ class AdminUsersController < ApplicationController
 
   def update
     @admin_user = AdminUser.find(params[:id])
-    if @admin_user.update_attributes(admin_users_params)
+    if @admin_user.update_attributes(admin_user_params)
       flash[:notice] = "Admin User updated successfully"
       redirect_to(:action => 'index')
     else
@@ -48,7 +48,7 @@ class AdminUsersController < ApplicationController
 
   private
   
-    def admin_users_params
-      params.require(:admin_user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :username)
+    def admin_user_params
+      params.require(:admin_user).permit(:first_name, :last_name, :email, :username, :password, :password_confirmation)
     end
 end

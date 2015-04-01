@@ -32,7 +32,7 @@ class AdminUser < ActiveRecord::Base
                           :length => {:maximum => 25 }
   validates :last_name,   :presence => true,
                           :length => { :maximum => 50 }
-  validates :user_name,   :length => { :within => 8..25 },
+  validates :username,   :length => { :within => 8..25 },
                           :uniqueness =>  true
   validates :email,       :presence => true,
                           :length => { :maximum => 100},
@@ -59,10 +59,10 @@ class AdminUser < ActiveRecord::Base
 
   # Errors not related to a specific attribute
   # can be added to errors[:base]
-  def no_new_users_on_saturday
-    if Time.now.wday == 6
-      errors[:base] << "No new users on Saturdays."
-    end    
-  end
+  #def no_new_users_on_saturday
+    #if Time.now.wday == 6
+      #errors[:base] << "No new users on Saturdays."
+    #end    
+  #end
 
 end

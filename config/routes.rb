@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  root "access#index"
+  #root "demo#index"
   
-  root "demo#index"
-  
-  get 'admin', :to => "access#index"
+  get 'admin', :to => "access#index"   # This takes us to our Menu
 
   #get 'demo/index'
   match ':controller(/:action(/:id))', :via => [:get, :post]
