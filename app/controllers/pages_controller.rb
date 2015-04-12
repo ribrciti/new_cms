@@ -3,10 +3,11 @@ class PagesController < ApplicationController
   layout "admin"
 
   before_action :confirm_logged_in
-  before_action :find_Subject
+  before_action :find_subject
   
   def index
-    # @pages = Page.where(:subject_id => @subject.id).sorted
+    #@pages = Page.sorted
+    #@pages = Page.where(:subject_id => @subject.id).sorted
     @pages = @subject.pages.sorted      #same result as code above
   end
 
@@ -53,17 +54,16 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id]).destroy
     flash[:notice] = "Page destroyed successfully"
-      redirect_to(:action => 'show',:id => 'index', :subject_id => subject.id)
+      redirect_to(:action => 'index',:subject_id => subject.id)
   end
 
   private
 
     def page_params
-      params.require(:page).permit(:subject_id,:name,
-         :permalink, :position, :visible)
+      params.require(:page).permit(:name, :position, :visible, :permalink, :subject_id)
     end
 
-    def :find_Subject
+    def find_subject
       if params[:subject_id]
         @subject = Subject.find(params[:subject_id])
       end
