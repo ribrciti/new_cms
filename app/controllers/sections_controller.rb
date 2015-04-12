@@ -13,7 +13,7 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @section = Section.new({:name => "Default"})
+    @section = Section.new({:page_id => @page.id, :name => "Default"})
   end
 
   def create
