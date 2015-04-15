@@ -2,6 +2,8 @@ class Subject < ActiveRecord::Base
 
 	has_many :pages			# belongs_to :subject (in page.rb)
 
+	acts_as_list
+
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 255
 		#validdates_presence_of vs. validates_length _of :minimum => 1
