@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root "access#index"
-  #root "demo#index"
   
+  root "public#index"
+ 
+  get 'show/:permalink', :to => 'public#show' 
   get 'admin', :to => "access#index"   # This takes us to our Menu
 
   #get 'demo/index'

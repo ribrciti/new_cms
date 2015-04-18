@@ -44,7 +44,7 @@ class Page < ActiveRecord::Base
   			
   			# section.destroy  ***uncomment this line if you do want to destroy all sections -
   														#- associated with the deletion of this particular page
-  														# Or perhaps instead of destroy, you would move them to another page.	
+  		end												# Or perhaps instead of destroy, you would move them to another page.	
   	end
-   
-end
+ end  
+
